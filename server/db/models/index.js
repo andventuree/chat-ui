@@ -1,5 +1,3 @@
 const Message = require("./message");
 
-module.exports = {
-  Message
-};
+module.exports = Message;

@@ -25,14 +25,16 @@ export const fetchMessages = () => {
   };
 };
 
-export const postMessage = message => {
+export const postMessage = messagePayload => {
+  console.log(messagePayload);
   return dispatch => {
     return axios
-      .post("/spotim/chat/messages", message)
+      .post("/spotim/chat/messages", messagePayload)
       .then(res => res.data)
       .then(newMessage => {
         dispatch(getMessage(newMessage));
-      });
+      })
+      .catch(err => console.error(err));
   };
 };
 

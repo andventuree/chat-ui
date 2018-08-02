@@ -10,7 +10,7 @@ const Message = db.define("message", {
     type: Sequelize.STRING,
     allowNull: false
   },
-  text: {
+  content: {
     type: Sequelize.STRING,
     allowNull: false
   }
