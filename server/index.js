@@ -8,6 +8,7 @@ app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// /spotim/chat/messages
 app.use("/spotim/chat", require("./api"));
 
 app.get("*", (req, res, next) => {
