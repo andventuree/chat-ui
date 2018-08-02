@@ -6,7 +6,7 @@ import "./index.scss";
 import App from "./components";
 import io from "socket.io-client";
 import { Provider } from "react-redux";
-import store from "./store";
+import store, { getMessage } from "./store";
 
 ReactDOM.render(
   <Provider store={store}>
@@ -19,6 +19,11 @@ ReactDOM.render(
 const socket = io("https://spotim-demo-chat-server.herokuapp.com");
 socket.on("connect", function() {
   console.log("connected to chat server!");
+
+  //spotim is already emitting messages, so building a backend for this app was not necessary
+  // socket.on("spotim/chat", message => {
+  //   store.dispatch(getMessage(message));
+  // });
 });
 
 socket.on("disconnect", function() {

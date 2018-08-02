@@ -12,7 +12,6 @@ class MessageList extends Component {
     console.log("messages", messages);
     return (
       <div>
-        {messages.length === 0 ? "No messages to show" : "There are messages"}
         {messages.length !== 0 &&
           messages.map(message => {
             return (
